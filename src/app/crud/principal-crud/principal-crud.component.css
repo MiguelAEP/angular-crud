@@ -1,0 +1,13 @@
+body{
+    
+    background:url('/assets/imagenCrud.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height:100vh;
+    
+}
+
+.btn-info{
+    background:rgb(146, 203, 241)
+}

@@ -1,0 +1,60 @@
+<body>
+    
+    
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+                <form (ngSubmit)="registrar()" autocomplete="off"
+                class="login100-form" [formGroup]="miFormulario" >
+                    
+                    <span class="login100-form-title p-b-49">
+                        Create Account
+                    </span>
+    
+                    <div class="wrap-input100 m-b-23">
+                        <span class="label-input100">Email</span>
+                        <input class="input100"
+                               type="text" 
+                               name="email" 
+                               placeholder="Ingrese su email"
+                               formControlName="email"
+                               >
+                       
+                    </div>
+                    <span  class="text-danger" *ngIf="validado('email')">Estructura de correo incorrecto</span>
+                    <div class="wrap-input100">
+                        <span class="label-input100">Password</span>
+                        <input class="input100"
+                               type="password"
+                               name="password" 
+                               placeholder="Ingrese su contraseña"
+                               formControlName="password"
+                               >
+                       
+                    </div>
+                    <span  class="text-danger" *ngIf="validado('password')"> contraseña mayor a 2 digitos</span>
+                    <div class="text-right p-t-8 p-b-31"></div>
+                    
+                    <div class="container-login100-form-btn">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <button  [disabled]="miFormulario.invalid"
+                            class="login100-form-btn">
+                                Create Account
+                            </button>
+                        </div>
+                    </div>
+    
+                    <div class="flex-col-c p-t-60">
+
+                        <a routerLink="/login" class="txt2">
+                            regresar al login
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    
+    </body>

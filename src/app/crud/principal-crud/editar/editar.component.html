@@ -1,0 +1,61 @@
+
+<form [formGroup]="miFormulario"
+class="form-group" 
+>
+    <label for="nombre">Nombre</label>
+    <input type="text"
+    class="form-control" 
+    placeholder="Editar nombre"
+    formControlName="nombre"
+    >
+  
+    <br>
+
+    <label for="email">Email</label>
+    <input type="text" 
+    class="form-control" 
+    placeholder="Editar email"
+    formControlName="email"
+    >
+   
+    <br>
+
+    <label for="pais">Pais</label>
+    <input type="text" 
+    class="form-control" 
+    placeholder="Editar pais"
+    formControlName="pais"
+    >
+
+    <br>
+    <button (click)="actualizarPersona()"
+     type="button" class="btn btn-secondary mt-3">
+     Guardar
+    </button>
+</form>
+
+
+
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Email</th>
+        <th scope="col">Pais</th>
+      </tr>
+    </thead>
+    <tbody>
+     
+
+      <tr *ngFor="let personasd of personas ; let i=index">
+        <th scope="row">{{i}}</th>
+        <td>{{personasd.nombre}}</td>
+        <td>{{personasd.email}}</td>
+        <td>{{personasd.pais}}</td>
+        <button class="btn btn-info" (click)="editar(personasd)">editar</button>
+        <button class="btn btn-danger" (click)="eliminar(i)">Eliminar</button>
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,37 @@
+<form (ngSubmit)="registrar()"
+class="form-group" 
+[formGroup]="miFormulario">
+
+    <label for="nombre">Nombre</label>
+    <input type="text"
+    class="form-control" 
+    placeholder="ingrese nombre"
+    formControlName="nombre"
+    >
+    <span class="text-danger" *ngIf="validado('nombre')">ingrese correcto el nombre</span>
+    <br>
+
+    <label for="email">Email</label>
+    <input type="text" 
+    class="form-control" 
+    placeholder="ingrese email"
+    formControlName="email"
+    >
+    <span class="text-danger" *ngIf="validado('email')">ingrese correcto el email</span>
+    <br>
+
+    <label for="pais">Pais</label>
+    <input type="text" 
+    class="form-control" 
+    placeholder="ingrese pais"
+    formControlName="pais"
+    >
+    <span class="text-danger" *ngIf="validado('pais')">ingrese correcto el pais</span>
+
+    <br>
+    <button [disabled]="miFormulario.invalid"
+     type="submit" class="btn btn-secondary mt-3">
+     Registrar
+    </button>
+</form>
+

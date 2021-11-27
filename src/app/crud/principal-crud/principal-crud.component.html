@@ -1,0 +1,33 @@
+
+   <body >
+
+    <div class="container pt-5 ">
+
+        <h3>Registro de Personas</h3>
+
+        <div class="row">
+            <div class="col">
+                <h4>Registrar</h4>
+                <br>
+                <app-registro (emitirArreglo)="emitidoArreglo($event)"></app-registro>
+            </div>
+        
+            <div class="col">
+                <h4>Editar</h4>
+                <br>
+                <app-editar [personas]="personaObtenida"></app-editar>
+            </div>
+        </div>
+ 
+    </div>
+  
+    <div class="col text-center mt-3">
+        <button (click)="salir()"
+        class='btn btn-info center-block' routerLink='/login'>Logout</button>
+     </div> 
+   
+</body>
+         
+
+
+   
